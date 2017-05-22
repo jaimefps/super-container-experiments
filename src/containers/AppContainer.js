@@ -1,13 +1,13 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { switchBoolean } from '../actions/testAction';
+import { switchBoolean } from '../actions/ex_action';
 
 import App from '../components/App';
 
 function mapStateToProps(state) {
   return {
-    bool: state.boolean,
+    boolean: state.boolean,
   };
 }
 

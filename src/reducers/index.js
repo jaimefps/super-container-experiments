@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import testReducer from './testReducer';
+import test_reducer from './ex_reducer';
 
 const allReducers = combineReducers({
-  bool: testReducer, 
+  boolean: test_reducer, 
 });
 
 export default allReducers;

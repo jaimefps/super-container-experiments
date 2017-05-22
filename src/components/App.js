@@ -5,8 +5,8 @@ class App extends Component {
     console.log(this.props)
     return (
       <div style={{ marginTop: '25%', marginLeft: '50%' }}>
-        <button onClick={() => this.props.switchBool(this.props.bool)}> ! </button>
-        {JSON.stringify(this.props.bool)}
+        <button onClick={() => this.props.switchBoolean(this.props.boolean)}> ! </button>
+        {JSON.stringify(this.props.boolean)}
       </div>
     );
   }
