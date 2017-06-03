@@ -60,7 +60,7 @@ export default function (state = true, action) {
 
 The above file is an example of a "reducer": a function-file that is responsible for managing some aspect of the Store. In this tutorial, the reducer will be responsible for managing a boolean. 
 
-Note the default value in the function's parameter for the `state = true`
+Note the default value in the function's parameter where `state = true`
 
 
 ```javascript
@@ -77,7 +77,9 @@ const allReducers = combineReducers({
 export default allReducers;
 ```
 
-The reducer's index.js file is responsible for joining all the redcuer function-files into a single group that we import into the entry point of the application as mentioned in step 3. We save each reducer-file under some key (in this case "boolean"). Hence, the return value of each reducer is kept in the Store under the key name that we give it in the reducer's index.js file. 
+The reducer's index.js file is responsible for joining all the redcuer function-files into a single group that we import into the entry point of the application as mentioned in step 3. 
+
+We save each reducer-file under some key (in this case "boolean"). Hence, the return value of each reducer is kept in the Store under the key name that we give it in the reducer's index.js file. 
 
 #### 5. Create Containers to connect components to the Store.
 
@@ -108,16 +110,13 @@ function matchDispatchToProps(dispatch) {
 
 export default connect(mapStateToProps, matchDispatchToProps)(App);
 ```
-
-The "container" code is responsible for giving a component access to the Store state.
-
-The container is then responsible for three main things:
+Each "container" file is responsible for three main things:
   * mapStateToProps: list the part of the Store state we want to access in the component.
   * matchDispatchToProps: list "actions" (functionality) for the component.
-  * connect: connect the component to the Store.
+  * connect: connect the component to the Store (bottom line of code).
 
-Now the store state and functionality are accessible in the component through its `props`, e.g.:
-  * `this.props.boolean` => the part of the Store state we gave it access to.
+Now the Store state and desired functionality are accessible in the component through its `props`, e.g.:
+  * `this.props.boolean` => the part of the Store state we gave it access to; i.e., `state.boolean`
   * `this.props.switchBoolean` => the function we gave it access to.
 
 #### 6. Create an action that interacts with the state.
@@ -137,7 +136,7 @@ Note a few things:
 
 #### 7. Now you can use the function in your component, and affect the Store with it!
 
-The component has access to the function by means of `this.props.switchBoolean`, and the Store key `boolean` is within its scope of influence. So now you can flip the boolean with a button that invokes the function and takes the `this.props.boolean` as the parameter, which is in fact the Store 'boolean'.
+The component has access to the function by means of `this.props.switchBoolean`, and the Store key `boolean` is now within its scope of influence. You can now switch the boolean value with a button that invokes the function and takes `this.props.boolean` as the parameter, which is in fact the Store's 'boolean'.
 
 ```javascript
 // @ components/App.js
