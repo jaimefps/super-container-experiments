@@ -105,9 +105,7 @@ function matchDispatchToProps(dispatch) {
 export default connect(mapStateToProps, matchDispatchToProps)(App);
 ```
 
-The "container" code is responsible for giving a component access to the Store state. 
-
-This is where the `react-redux` node module comes into play: giving us access to the `connect()` function seen at the bottom, where the component is connected to the Store.
+The "container" code is responsible for giving a component access to the Store state.
 
 The container is then responsible for three main things:
   * mapStateToProps: list the part of the Store state we want to access in the component.
