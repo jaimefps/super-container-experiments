@@ -131,7 +131,7 @@ Note a few things:
   * The object literal must at least have a 'type' key (even when no reducer responds to it).
   * The 'payload' key is what holds the value for the new state for the reducers that handle this 'type' (as seen above in step 4).
 
-### 7. Celebrate: you just build a react-redux environment from scratch.
+### 7. Celebrate: you just built a react-redux environment from scratch.
 
 # To run app locally
 
