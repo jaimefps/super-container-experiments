@@ -136,6 +136,8 @@ Note a few things:
 The component has access to the function by means of `this.props.switchBoolean`, and the Store key `boolean` is within its scope of influence. So now you can flip the boolean with a button that invokes the function and takes the `this.props.boolean` as the parameter, which is in fact the Store 'boolean'.
 
 ```javascript
+// @ components/App.js
+
 import React, { Component } from 'react';
 
 class App extends Component {
