@@ -5,13 +5,13 @@ How I would explain react + redux to a newcomer.
 
 # basic workflow set up
 
-### 1. `npm install -S redux react-redux` 
+#### 1. `npm install -S redux react-redux` 
 
-### 2. Create folders as such in /src folder:
+#### 2. Create folders as such in /src folder:
 
 ![alt text](images/folder-structure.png)
 
-### 3. Set up your Provider, createStore, and allReducers as seen in the index.js entry point file.
+#### 3. Set up your Provider, createStore, and allReducers as seen in the index.js entry point file.
 
 ```javascript
 import 'babel-polyfill';
@@ -36,7 +36,7 @@ ReactDOM.render(
 );
 ```
 
-### 4. Create an index.js file in the /reducers folder, and create a dummy reducer file.
+#### 4. Create an index.js file in the /reducers folder, and create a dummy reducer file.
 
 ```javascript
 // @ /reducer/index.js
@@ -73,7 +73,7 @@ export default function (state = true, action) {
 
 Note the default value in the function's parameter for the state (=true).
 
-### 5. Create Containers to connect components to the Store.
+#### 5. Create Containers to connect components to the Store.
 
 ```javascript
 // @ /containers/AppContainer.js
@@ -116,7 +116,7 @@ Now the store state and functionality are accessible in the component through it
   * `this.props.boolean` => the part of the Store state we gave it access to.
   * `this.props.switchBoolean` => the function we gave it access to.
 
-### 6. Create an action that interacts with the state.
+#### 6. Create an action that interacts with the state.
 
 ```javascript
 // @ /actions/ex_action.js
@@ -131,7 +131,7 @@ Note a few things:
   * The object literal must at least have a 'type' key (even when no reducer responds to it).
   * The 'payload' key is what holds the value for the new state for the reducers that handle this 'type' (as seen above in step 4).
 
-### 7. Celebrate: you just built a react-redux environment from scratch.
+#### 7. Celebrate: you just built a react-redux environment from scratch.
 
 # To run app locally
 
