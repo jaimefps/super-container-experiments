@@ -113,8 +113,8 @@ The container is then responsible for three main things:
   * connect: connect the component to the Store.
 
 Now the store state and functionality are accessible in the component through its `props`, e.g.:
-  * `this.props.boolean` = state
-  * `this.props.switchBoolean` = function
+  * `this.props.boolean` => the part of the Store state we gave it access to.
+  * `this.props.switchBoolean` => the function we gave it access to.
 
 ### 6. Create an action that interacts with the state.
 
