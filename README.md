@@ -5,6 +5,8 @@ How I would explain react + redux to a newcomer.
 
 # basic workflow set up
 
+#### NOTE: This tutorial must be fully completed for the application to work. Soon I will write a more detailed explanation of the workflow for Redux-React set up.
+
 #### 1. `npm install -S redux react-redux` 
 
 #### 2. Create the following folder structure inside the /src folder:
