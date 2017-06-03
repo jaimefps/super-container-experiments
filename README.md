@@ -1,6 +1,6 @@
 # react-redux-tutorial
 
-how i'd explain react + redux to someone
+How I would explain react + redux to a newcomer. 
 
 
 # basic workflow set up
