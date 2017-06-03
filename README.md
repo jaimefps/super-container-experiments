@@ -7,7 +7,7 @@ How I would explain react + redux to a newcomer.
 
 #### 1. `npm install -S redux react-redux` 
 
-#### 2. Create folders as such in /src folder:
+#### 2. Create the following folder structure inside the /src folder:
 
 ![alt text](images/folder-structure.png)
 
