@@ -52,8 +52,9 @@ const allReducers = combineReducers({
 export default allReducers;
 ```
 
-The file above will import the file below, 
-and use its return value as the Redux's Store's state
+The file above will import the file below. 
+
+The file above uses the /ex_reducer.js return value as the Redux's Store's state
 stored under the key which we name 'boolean'.
 
 
@@ -69,11 +70,48 @@ export default function (state = true, action) {
 }
 ```
 
-Note that it is important to have some default value 
-in the function's parameter for the state. Including
-a default value within the parameters is es6 syntax.
+Note the default value in the function's parameter for the state (=true).
 
 5. Create Containers to connect components to the Store.
+
+```
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { switchBoolean } from '../actions/ex_action';
+
+import App from '../components/App';
+
+function mapStateToProps(state) {
+  return {
+    boolean: state.boolean,
+  };
+}
+
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { 
+      switchBoolean 
+    }, 
+    dispatch
+  );
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(App);
+```
+
+The "container" code is responsible for giving a component access to the Store state. 
+
+This is where the `react-redux` node module comes into play: givin gus access to the connect function on the bootom, where the component is connected to the Store.
+
+The container is then responsible for three main things:
+
+a. mapStateToProps: list the part of the Store state we want to access in the component.
+
+b. matchDispatchToProps: list "actions" (functionality) for the component.
+
+c. connect: connect the component to the Store.
+
 6. create some action that interacts with the state.
 7. celebrate: you just build a react-redux environment from scratch.
 
