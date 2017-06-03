@@ -134,9 +134,15 @@ Note a few things:
   * The object literal must at least have a 'type' key (even when no reducer responds to it).
   * The 'payload' key is what holds the value for the new state for the reducers that handle this 'type' (as seen above in step 4).
 
+  Note that the ex_reducer.js file in step 4 has a case for `SWITCH_BOOLEAN`, that is how the Store knows what state key should be affected by an action's payload. 
+  
+  Hence, all reducer functions that contain a `SWITCH_BOOLEAN` case will be affected by this action. 
+
 #### 7. Now you can use the function in your component, and affect the Store with it!
 
-The component has access to the function by means of `this.props.switchBoolean`, and the Store key `boolean` is now within its scope of influence. You can now switch the boolean value with a button that invokes the function and takes `this.props.boolean` as the parameter, which is in fact the Store's 'boolean'.
+The component has access to the function by means of `this.props.switchBoolean`, and the Store key `boolean` is now within its scope of influence. 
+
+You can now switch the boolean value with a button that invokes the function and takes `this.props.boolean` as the parameter, which is in fact the Store's 'boolean'.
 
 ```javascript
 // @ components/App.js
