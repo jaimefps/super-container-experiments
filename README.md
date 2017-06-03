@@ -131,8 +131,27 @@ Note a few things:
   * The object literal must at least have a 'type' key (even when no reducer responds to it).
   * The 'payload' key is what holds the value for the new state for the reducers that handle this 'type' (as seen above in step 4).
 
-#### 7. Celebrate: you just built a react-redux environment from scratch.
+#### 7. Now you can use the function in your component, and affect the Store with it!
 
+The component has access to the function by means of `this.props.switchBoolean`, and the Store key `boolean` is within its scope of influence. So now you can flip the boolean with a button that invokes the function and takes the `this.props.boolean` as the parameter, which is in fact the Store 'boolean'.
+
+```javascript
+import React, { Component } from 'react';
+
+class App extends Component {
+  render() {
+    console.log(this.props)
+    return (
+      <div style={{ marginTop: '25%', marginLeft: '50%' }}>
+        <button onClick={() => this.props.switchBoolean(this.props.boolean)}> ! </button>
+        {JSON.stringify(this.props.boolean)}
+      </div>
+    );
+  }
+}
+
+export default App;
+```
 # To run app locally
 
 `npm i`
