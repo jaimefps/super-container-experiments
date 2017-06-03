@@ -38,7 +38,30 @@ ReactDOM.render(
 );
 ```
 
+  * The `<Provider>` gives the whole application access to the Store.
+  * `createStore` builds the Store out of all the joined reducers (more on them later).
+  * `allReducers` is the group of joined reducers that we import to build the Store.
+
+
 #### 4. Create an index.js file in the /reducers folder, and create a dummy reducer file.
+
+```javascript
+// @ /reducers/ex_reducer.js
+
+export default function (state = true, action) {
+  switch (action.type) {
+    case 'SWITCH_BOOLEAN':
+      return action.payload;
+    default:
+      return state;
+  }
+}
+```
+
+The above file is an example of a "reducer": a function-file that is responsible for managing some aspect of the Store. In this tutorial, the reducer will be responsible for managing a boolean. 
+
+Note the default value in the function's parameter for the `state = true`
+
 
 ```javascript
 // @ /reducer/index.js
@@ -54,26 +77,7 @@ const allReducers = combineReducers({
 export default allReducers;
 ```
 
-The file above will import the file below. 
-
-The file above uses the /ex_reducer.js return value as the Redux's Store's state
-stored under the key which we name 'boolean'.
-
-
-```javascript
-// @ /reducers/ex_reducer.js
-
-export default function (state = true, action) {
-  switch (action.type) {
-    case 'SWITCH_BOOLEAN':
-      return action.payload;
-    default:
-      return state;
-  }
-}
-```
-
-Note the default value in the function's parameter for the state (=true).
+The reducer's index.js file is responsible for joining all the redcuer function-files into a single group that we import into the entry point of the application as mentioned in step 3. We save each reducer-file under some key (in this case "boolean"). Hence, the return value of each reducer is kept in the Store under the key name that we give it in the reducer's index.js file. 
 
 #### 5. Create Containers to connect components to the Store.
 
