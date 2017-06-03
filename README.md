@@ -111,9 +111,9 @@ function matchDispatchToProps(dispatch) {
 export default connect(mapStateToProps, matchDispatchToProps)(App);
 ```
 Each "container" file is responsible for three main things:
-  * mapStateToProps: list the part of the Store state we want to access in the component.
-  * matchDispatchToProps: list "actions" (functionality) for the component.
-  * connect: connect the component to the Store (bottom line of code).
+  * `mapStateToProps`: list the part of the Store state we want to access in the component.
+  * `matchDispatchToProps`: list "actions" (functionality) for the component.
+  * `connect`: connect the component to the Store (bottom line of code).
 
 Now the Store state and desired functionality are accessible in the component through its `props`, e.g.:
   * `this.props.boolean` => the part of the Store state we gave it access to; i.e., `state.boolean`
