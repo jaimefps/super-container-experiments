@@ -5,15 +5,15 @@ how i'd explain react + redux to someone
 
 # basic workflow set up
 
-1. `npm install -S redux react-redux` 
+## 1. `npm install -S redux react-redux` 
 
-2. Create folders as such in /src folder:
+## 2. Create folders as such in /src folder:
 
 ![alt text](images/folder-structure.png)
 
-3. Set up your Provider, createStore, and allReducers as seen in the index.js entry point file.
+## 3. Set up your Provider, createStore, and allReducers as seen in the index.js entry point file.
 
-```
+```javascript
 import 'babel-polyfill';
 
 import React from 'react';
@@ -38,7 +38,7 @@ ReactDOM.render(
 
 4. Create an index.js file in the /reducers folder, and create a dummy reducer file.
 
-```
+```javascript
 // @ /reducer/index.js
 
 import { combineReducers } from 'redux';
@@ -58,7 +58,7 @@ The file above uses the /ex_reducer.js return value as the Redux's Store's state
 stored under the key which we name 'boolean'.
 
 
-``` 
+```javascript
 // @ /reducers/ex_reducer.js
 export default function (state = true, action) {
   switch (action.type) {
@@ -74,7 +74,7 @@ Note the default value in the function's parameter for the state (=true).
 
 5. Create Containers to connect components to the Store.
 
-```
+```javascript
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -105,12 +105,9 @@ The "container" code is responsible for giving a component access to the Store s
 This is where the `react-redux` node module comes into play: givin gus access to the connect function on the bootom, where the component is connected to the Store.
 
 The container is then responsible for three main things:
-
-a. mapStateToProps: list the part of the Store state we want to access in the component.
-
-b. matchDispatchToProps: list "actions" (functionality) for the component.
-
-c. connect: connect the component to the Store.
+..mapStateToProps: list the part of the Store state we want to access in the component.
+..matchDispatchToProps: list "actions" (functionality) for the component.
+..connect: connect the component to the Store.
 
 6. create some action that interacts with the state.
 7. celebrate: you just build a react-redux environment from scratch.
