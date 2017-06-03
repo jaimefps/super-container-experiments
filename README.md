@@ -76,6 +76,8 @@ Note the default value in the function's parameter for the state (=true).
 ### 5. Create Containers to connect components to the Store.
 
 ```javascript
+// @ /containers/AppContainer.js
+
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
