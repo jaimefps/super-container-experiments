@@ -106,9 +106,9 @@ The "container" code is responsible for giving a component access to the Store s
 This is where the `react-redux` node module comes into play: givin gus access to the connect function on the bootom, where the component is connected to the Store.
 
 The container is then responsible for three main things:
-..mapStateToProps: list the part of the Store state we want to access in the component.
-..matchDispatchToProps: list "actions" (functionality) for the component.
-..connect: connect the component to the Store.
+..* mapStateToProps: list the part of the Store state we want to access in the component.
+..* matchDispatchToProps: list "actions" (functionality) for the component.
+..* connect: connect the component to the Store.
 
 ### 6. create some action that interacts with the state.
 ### 7. celebrate: you just build a react-redux environment from scratch.
