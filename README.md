@@ -36,10 +36,44 @@ ReactDOM.render(
 );
 ```
 
+4. Create an index.js file in the /reducers folder, and create a dummy reducer file.
+
+```
+// @ /reducer/index.js
+
+import { combineReducers } from 'redux';
+
+import test_reducer from './ex_reducer';
+
+const allReducers = combineReducers({
+  boolean: test_reducer, 
+});
+
+export default allReducers;
+```
+
+The file above will import the file below, 
+and use its return value as the Redux's Store's state
+stored under the key which we name 'boolean'.
 
 
-4. create the index.js in the reducer folder, and create a dummy reducer file.
-5. make container to connect component to the Store, and check to see if the component can log the state.
+``` 
+// @ /reducers/ex_reducer.js
+export default function (state = true, action) {
+  switch (action.type) {
+    case 'SWITCH_BOOLEAN':
+      return action.payload;
+    default:
+      return state;
+  }
+}
+```
+
+Note that it is important to have some default value 
+in the function's parameter for the state. Including
+a default value within the parameters is es6 syntax.
+
+5. Create Containers to connect components to the Store.
 6. create some action that interacts with the state.
 7. celebrate: you just build a react-redux environment from scratch.
 
