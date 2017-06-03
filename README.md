@@ -110,8 +110,26 @@ The container is then responsible for three main things:
   * matchDispatchToProps: list "actions" (functionality) for the component.
   * connect: connect the component to the Store.
 
-### 6. create some action that interacts with the state.
-### 7. celebrate: you just build a react-redux environment from scratch.
+Now the store state and functionality are accessible in the component through its `props`, e.g.:
+  * `this.props.boolean` = state
+  * `this.props.switchBoolean` = function
+
+### 6. Create an action that interacts with the state.
+
+```javascript
+// @ /actions/ex_action.js
+
+export const switchBoolean = (boolean) => ({
+  type: 'SWITCH_BOOLEAN',
+  payload: !boolean,
+});
+```
+Note a few things:
+  * The action must return an object literal.
+  * The object literal must at least have a 'type' key (even when no reducer respondes to it).
+  * The 'payload' key is what holds the value for the new state for the reducers that handle this 'type' (as seen above in step 4).
+
+### 7. Celebrate: you just build a react-redux environment from scratch.
 
 # To run app locally
 
