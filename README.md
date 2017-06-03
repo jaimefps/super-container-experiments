@@ -117,7 +117,7 @@ Each "container" file is responsible for three main things:
 
 Now the Store state and desired functionality are accessible in the App.js component through its `props`:
   * `this.props.boolean` => the part of the Store state we gave it access to; i.e., `state.boolean`
-  * `this.props.switchBoolean` => the function we gave it access to.
+  * `this.props.switchBoolean` => the function we gave it access to (we create this action in the next step).
 
 #### 6. Create an action that interacts with the state.
 
