@@ -1,4 +1,7 @@
 export const switchBoolean = (boolean) => ({
   type: 'SWITCH_BOOLEAN',
-  payload: !boolean,
+});
+
+export const switchNumber = (num) => ({
+  type: 'SWITCH_NUMBER',
 });

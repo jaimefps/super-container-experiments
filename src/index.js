@@ -1,20 +1,19 @@
-import 'babel-polyfill';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import allReducers from './reducers/index.js';
 
-// IMPORT THE CONTAINERS !!!!! (not the component)
-import AppContainer from './containers/AppContainer';
+import rootReducer from './reducers';
 
-const store = createStore(allReducers);
+// import App from './containers/NormalContainer';
+import App from './components/App-withSuper';
+
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <AppContainer />
+    <App/>
   </Provider>,
   document.getElementById('root'),
 );

@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
-import test_reducer from './ex_reducer';
+import bool_reducer from './bool_reducer';
+import num_reducer from './num_reducer';
 
-const allReducers = combineReducers({
-  boolean: test_reducer, 
+const rootReducer = combineReducers({
+  boolean: bool_reducer,
+  number: num_reducer,
 });
 
-export default allReducers;
+export default rootReducer;
